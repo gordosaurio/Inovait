@@ -2,16 +2,8 @@ CREATE TABLE TEACHER (
     id                SERIAL PRIMARY KEY,
     birth_date        DATE,
     name              VARCHAR(100),
-    card_id           INTEGER UNIQUE,
+    card_id           INTEGER UNIQUE
 
-);
-
-CREATE TABLE TEACHER_SCHOOL (
-    id                SERIAL PRIMARY KEY,
-    teacher_id        INTEGER REFERENCES TEACHER(id),
-    school_id         INTEGER REFERENCES SCHOOL(id),
-    contract_start    DATE,
-    contract_finish   DATE
 );
 
 CREATE TABLE SCHOOL (
@@ -22,7 +14,15 @@ CREATE TABLE SCHOOL (
     phone_number      VARCHAR(20),
     email             VARCHAR(100),
     website           VARCHAR(100),
-    is_public         BOOLEAN,
+    is_public         BOOLEAN
+);
+
+CREATE TABLE TEACHER_SCHOOL (
+    id                SERIAL PRIMARY KEY,
+    teacher_id        INTEGER REFERENCES TEACHER(id),
+    school_id         INTEGER REFERENCES SCHOOL(id),
+    contract_start    DATE,
+    contract_finish   DATE
 );
 
 CREATE TABLE STUDENT (
@@ -33,12 +33,6 @@ CREATE TABLE STUDENT (
     school_id         INTEGER REFERENCES SCHOOL(id)
 );
 
-CREATE TABLE STUDENT_GROUP (
-    id                SERIAL PRIMARY KEY,
-    student_id        INTEGER REFERENCES STUDENT(id),
-    group_id         INTEGER REFERENCES GROUP(id)
-);
-
 CREATE TABLE GROUP_T (
     id                SERIAL PRIMARY KEY,
     grade             INTEGER,
@@ -47,10 +41,10 @@ CREATE TABLE GROUP_T (
     school_id         INTEGER REFERENCES SCHOOL(id)
 );
 
-CREATE TABLE CLASS_STUDENT (
+CREATE TABLE STUDENT_GROUP (
     id                SERIAL PRIMARY KEY,
     student_id        INTEGER REFERENCES STUDENT(id),
-    class_id          INTEGER REFERENCES CLASS(id),
+    group_id         INTEGER REFERENCES GROUP_T(id)
 );
 
 CREATE TABLE CLASS (
@@ -63,7 +57,13 @@ CREATE TABLE CLASS (
     year              INTEGER,
     classroom         VARCHAR(50),
     teacher_id        INTEGER REFERENCES TEACHER(id),
-    school_id         INTEGER REFERENCES SCHOOL(id),
+    school_id         INTEGER REFERENCES SCHOOL(id)
+);
+
+CREATE TABLE CLASS_STUDENT (
+    id                SERIAL PRIMARY KEY,
+    student_id        INTEGER REFERENCES STUDENT(id),
+    class_id          INTEGER REFERENCES CLASS(id)
 );
 
 CREATE TABLE ENROLLMENT_FEE (
@@ -74,5 +74,5 @@ CREATE TABLE ENROLLMENT_FEE (
     payment_date      DATE,
     status            BOOLEAN,
     year              INTEGER,
-    value             FLOAT,
+    value             FLOAT
 );
