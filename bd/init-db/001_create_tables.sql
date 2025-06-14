@@ -39,7 +39,7 @@ CREATE TABLE STUDENT_GROUP (
     group_id         INTEGER REFERENCES GROUP(id)
 );
 
-CREATE TABLE GROUP (
+CREATE TABLE GROUP_T (
     id                SERIAL PRIMARY KEY,
     grade             INTEGER,
     name              VARCHAR(100),
