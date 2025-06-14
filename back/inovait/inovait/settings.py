@@ -78,7 +78,7 @@ DATABASES = {
         'NAME': 'bd_principal',
         'USER': 'myuser',
         'PASSWORD': 'mypass',
-        'HOST': 'inovait_db',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
