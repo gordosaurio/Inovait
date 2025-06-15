@@ -6,50 +6,55 @@
   </div>
 </div>
 
-<div class="content" fxLayoutGap="1rem" fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="row wrap" fxLayout="row">
-
+<div class="content">
   <!-- Colegios -->
-  <mat-card class="column">
+  <mat-card class="responsive-card">
     <h2>Colegios</h2>
     <mat-form-field appearance="outline" class="search-box">
       <mat-label>Buscar colegio</mat-label>
       <input matInput type="text">
     </mat-form-field>
-    <mat-list>
-      <mat-list-item *ngFor="let school of schools">
-        <mat-icon matListIcon>school</mat-icon>
-        <h4 matLine>{{ school.name }}</h4>
-      </mat-list-item>
-    </mat-list>
+    <div class="scrollable-list">
+      <mat-list>
+        <mat-list-item *ngFor="let school of schools">
+          <mat-icon matListIcon>school</mat-icon>
+          <h4 matLine>{{ school.name }}</h4>
+        </mat-list-item>
+      </mat-list>
+    </div>
   </mat-card>
 
   <!-- Estudiantes -->
-  <mat-card class="column">
+  <mat-card class="responsive-card">
     <h2>Estudiantes</h2>
     <mat-form-field appearance="outline" class="search-box">
       <mat-label>Buscar estudiante</mat-label>
       <input matInput type="text">
     </mat-form-field>
-    <mat-list>
-      <mat-list-item *ngFor="let student of students">
-        <mat-icon matListIcon>person</mat-icon>
-        <h4 matLine>{{ student.name }}</h4>
-      </mat-list-item>
-    </mat-list>
+    <div class="scrollable-list">
+      <mat-list>
+        <mat-list-item *ngFor="let student of students">
+          <mat-icon matListIcon>person</mat-icon>
+          <h4 matLine>{{ student.name }}</h4>
+        </mat-list-item>
+      </mat-list>
+    </div>
   </mat-card>
 
   <!-- Docentes -->
-  <mat-card class="column">
+  <mat-card class="responsive-card">
     <h2>Docentes</h2>
     <mat-form-field appearance="outline" class="search-box">
       <mat-label>Buscar docente</mat-label>
       <input matInput type="text">
     </mat-form-field>
-    <mat-list>
-      <mat-list-item *ngFor="let teacher of teachers">
-        <mat-icon matListIcon>person</mat-icon>
-        <h4 matLine>{{ teacher.name }}</h4>
-      </mat-list-item>
-    </mat-list>
+    <div class="scrollable-list">
+      <mat-list>
+        <mat-list-item *ngFor="let teacher of teachers">
+          <mat-icon matListIcon>person</mat-icon>
+          <h4 matLine>{{ teacher.name }}</h4>
+        </mat-list-item>
+      </mat-list>
+    </div>
   </mat-card>
 </div>
