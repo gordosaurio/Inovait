@@ -1,6 +1,6 @@
 # inovait/views.py
 from django.http import JsonResponse
-from .models import Student, Teacher, School
+from .models import Student, Teacher, School, StudentGroup
 
 
 def getStudents(request):
@@ -16,3 +16,8 @@ def getTeachers(request):
 def getSchools(request):
     schools = list(School.objects.all().values())
     return JsonResponse(schools, safe=False)
+
+
+def getStudentGroup(request):
+    studentGroup = list(StudentGroup.objects.all().values())
+    return JsonResponse(studentGroup, safe=False)
