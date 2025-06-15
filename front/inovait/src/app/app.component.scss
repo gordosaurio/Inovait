@@ -52,6 +52,10 @@ body {
     margin-bottom: 1rem;
   }
 
+  mat-list-item h4 {
+    color: black;
+  }
+
   .scrollable-list {
     overflow-y: auto;
     flex-grow: 1;
