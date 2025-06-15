@@ -1,0 +1,55 @@
+<div class="topbar">
+  <h1>Colegios</h1>
+  <div class="center-label">Centro de Búsqueda Académica</div>
+  <div class="user-icons">
+    <mat-icon>person</mat-icon>
+  </div>
+</div>
+
+<div class="content" fxLayoutGap="1rem" fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="row wrap" fxLayout="row">
+
+  <!-- Colegios -->
+  <mat-card class="column">
+    <h2>Colegios</h2>
+    <mat-form-field appearance="outline" class="search-box">
+      <mat-label>Buscar colegio</mat-label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-list>
+      <mat-list-item *ngFor="let school of schools">
+        <mat-icon matListIcon>school</mat-icon>
+        <h4 matLine>{{ school.name }}</h4>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+
+  <!-- Estudiantes -->
+  <mat-card class="column">
+    <h2>Estudiantes</h2>
+    <mat-form-field appearance="outline" class="search-box">
+      <mat-label>Buscar estudiante</mat-label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-list>
+      <mat-list-item *ngFor="let student of students">
+        <mat-icon matListIcon>person</mat-icon>
+        <h4 matLine>{{ student.name }}</h4>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+
+  <!-- Docentes -->
+  <mat-card class="column">
+    <h2>Docentes</h2>
+    <mat-form-field appearance="outline" class="search-box">
+      <mat-label>Buscar docente</mat-label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-list>
+      <mat-list-item *ngFor="let teacher of teachers">
+        <mat-icon matListIcon>person</mat-icon>
+        <h4 matLine>{{ teacher.name }}</h4>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+</div>
