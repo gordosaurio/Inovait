@@ -18,8 +18,10 @@
     <div class="scrollable-list">
       <mat-list>
         <mat-list-item *ngFor="let school of schools">
-          <mat-icon matListIcon>school</mat-icon>
-          <h4 matLine>{{ school.name }}</h4>
+          <div class="list-item">
+            <img src="../assets/school.png" class="list-icon" alt="Colegio">
+            <h4 matLine>{{ school.name }}</h4>
+          </div>
         </mat-list-item>
       </mat-list>
     </div>
@@ -35,8 +37,10 @@
     <div class="scrollable-list">
       <mat-list>
         <mat-list-item *ngFor="let student of students">
-          <mat-icon matListIcon>person</mat-icon>
-          <h4 matLine>{{ student.name }}</h4>
+          <div class="list-item">
+            <img [src]="student.gender === 'Femenino' ? '../assets/student-female.png' : '../assets/student-male.png'" class="list-icon" alt="Estudiante">
+            <h4 matLine>{{ student.name }}</h4>
+          </div>
         </mat-list-item>
       </mat-list>
     </div>
@@ -52,11 +56,12 @@
     <div class="scrollable-list">
       <mat-list>
         <mat-list-item *ngFor="let teacher of teachers">
-          <mat-icon matListIcon>person</mat-icon>
-          <h4 matLine>{{ teacher.name }}</h4>
+          <div class="list-item">
+            <img src="../assets/teacher-male.png" class="list-icon" alt="Docente">
+            <h4 matLine>{{ teacher.name }}</h4>
+          </div>
         </mat-list-item>
       </mat-list>
     </div>
   </mat-card>
-
 </div>

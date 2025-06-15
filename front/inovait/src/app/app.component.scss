@@ -54,9 +54,24 @@ body {
 
   mat-list-item h4 {
     color: black;
+    margin: 0;
   }
 
   .scrollable-list {
     overflow-y: auto;
     flex-grow: 1;
+  }
+
+  .list-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 1rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .list-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
