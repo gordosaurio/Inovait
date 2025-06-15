@@ -11,10 +11,8 @@
   <!-- Colegios -->
   <mat-card class="column">
     <h2>Colegios</h2>
-    <mat-form-field appearance="outline" class="search-box">
-      <mat-label>Buscar colegio</mat-label>
-      <input matInput type="text">
-    </mat-form-field>
+    <!-- (click)="openSchoolFilterDialog()" -->
+    <button class="filter-button">Filtros</button>
     <div class="scrollable-list">
       <mat-list>
         <mat-list-item *ngFor="let school of schools" (click)="openSchoolDialog(school)">
@@ -30,10 +28,8 @@
   <!-- Estudiantes -->
   <mat-card class="column">
     <h2>Estudiantes</h2>
-    <mat-form-field appearance="outline" class="search-box">
-      <mat-label>Buscar estudiante</mat-label>
-      <input matInput type="text">
-    </mat-form-field>
+    <!-- (click)="openStudentFilterDialog()" -->
+    <button class="filter-button">Filtros</button>
     <div class="scrollable-list">
       <mat-list>
         <mat-list-item *ngFor="let student of students" (click)="openStudentDialog(student)">
@@ -49,10 +45,8 @@
   <!-- Docentes -->
   <mat-card class="column">
     <h2>Docentes</h2>
-    <mat-form-field appearance="outline" class="search-box">
-      <mat-label>Buscar docente</mat-label>
-      <input matInput type="text">
-    </mat-form-field>
+    <!-- (click)="openTeacherFilterDialog()" -->
+    <button class="filter-button">Filtros</button>
     <div class="scrollable-list">
       <mat-list>
         <mat-list-item *ngFor="let teacher of teachers" (click)="openTeacherDialog(teacher)">
