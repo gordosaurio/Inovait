@@ -9,6 +9,8 @@ import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DetailDialogComponent } from '../app/detail-dialog.component';
+import { StudentFormDialogComponent } from '../app/student-form-dialog.component';
+
 
 @Component({
   selector: 'app-root',
@@ -22,7 +24,6 @@ import { DetailDialogComponent } from '../app/detail-dialog.component';
     MatCardModule,
     FlexLayoutModule,
     MatDialogModule,
-    DetailDialogComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -85,5 +86,22 @@ export class AppComponent implements OnInit {
       data,
       width: '400px'
     });
-  }  
+  }
+
+  openStudentFormDialog(student?: any): void {
+    const dialogRef = this.dialog.open(StudentFormDialogComponent, {
+      width: '400px',
+      data: {
+        student: student || null,
+        schools: this.schools
+      }
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        
+      }
+    });
+  }
+  
 }
