@@ -4,9 +4,9 @@ body {
     background-color: white;
     margin: 0;
     font-family: inherit;
-  }
-  
-  .topbar {
+}
+
+.topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,9 +14,9 @@ body {
     color: black;
     padding: 1rem;
     flex-wrap: wrap;
-  }
-  
-  .center-label {
+}
+
+.center-label {
     background-color: #222;
     color: white;
     padding: 0.5rem 1rem;
@@ -24,9 +24,9 @@ body {
     font-weight: bold;
     font-size: 1.2rem;
     margin: auto;
-  }
-  
-  .content {
+}
+
+.content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -34,9 +34,9 @@ body {
     min-height: calc(100vh - 100px);
     padding: 1rem;
     background-color: white;
-  }
-  
-  .column {
+}
+
+.column {
     flex: 1 1 320px;
     max-width: 400px;
     min-height: 500px;
@@ -46,41 +46,40 @@ body {
     flex-direction: column;
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  mat-form-field.search-box {
+}
+
+mat-form-field.search-box {
     width: 100%;
     margin-bottom: 1rem;
-  }
-  
-  mat-list-item {
+}
+
+mat-list-item {
     cursor: pointer;             /* Hace clicable cada fila */
     &:hover {
-      background: rgba(0, 0, 0, 0.03);
+        background: rgba(0, 0, 0, 0.03);
     }
-  }
-  
-  mat-list-item h4 {
+}
+
+mat-list-item h4 {
     color: black;
     margin: 0;
-  }
-  
-  .scrollable-list {
+}
+
+.scrollable-list {
     overflow-y: auto;
     flex-grow: 1;
-  }
-  
-  .list-icon {
+}
+
+.list-icon {
     width: 32px;
     height: 32px;
     margin-right: 1rem;
     border-radius: 50%;
     object-fit: cover;
-  }
-  
-  .list-item {
+}
+
+.list-item {
     display: flex;
     align-items: center;
     gap: 1rem;
-  }
-  
+}
