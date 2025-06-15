@@ -1,45 +1,58 @@
-.topbar {
+body {
+    background-color: white;
+    color: black;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #222;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 1rem;
     flex-wrap: wrap;
   }
-  .topbar .center-label {
-    font-size: 1.2rem;
+
+  .center-label {
+    background-color: #222;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
     font-weight: bold;
+    font-size: 1.2rem;
+    margin: auto;
   }
-  
+
   .content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    min-height: calc(100vh - 100px);
     padding: 1rem;
+    background-color: white;
   }
-  
-  .responsive-card {
-    flex: 1 1 300px;
+
+  .column {
+    flex: 1 1 320px;
     max-width: 400px;
+    min-height: 500px;
+    height: 80vh;
+    margin: 1rem;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    max-height: 500px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
-  
-  .search-box {
+
+  mat-form-field.search-box {
     width: 100%;
     margin-bottom: 1rem;
   }
-  
+
   .scrollable-list {
     overflow-y: auto;
     flex-grow: 1;
-    min-height: 0;
-  }
-  
-  mat-card {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   }
