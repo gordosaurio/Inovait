@@ -29,9 +29,9 @@
   <mat-card class="column">
     <h2>Estudiantes</h2>
     <!-- (click)="openStudentFilterDialog()" -->
-    <button class="filter-button">Filtrar por año</button>
-    <button class="filter-button">Filtrar por colegio</button>
-    <button class="filter-button">Filtrar por grado</button>
+    <button class="filter-button" (click)="openStudentFilterDialogByYear()">Filtrar por año</button>
+    <button class="filter-button" (click)="openStudentFilterDialogBySchool()">Filtrar por colegio</button>
+    <button class="filter-button" (click)="openStudentFilterDialogByGrade()">Filtrar por grado</button>
     <button class="filter-button" (click)="openStudentFormDialog()">Crear Estudiante</button>
     <div class="scrollable-list">
       <mat-list>

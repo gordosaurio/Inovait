@@ -10,6 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DetailDialogComponent } from './detail-dialog/detail-dialog.component';
 import { StudentFormDialogComponent } from './student-form-dialog/student-form-dialog.component';
+import { StudentFilterDialogComponent } from './student-filter-dialog/student-filter-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -100,4 +101,33 @@ export class AppComponent implements OnInit {
     });
   }
   
+  openStudentFilterDialogBySchool(): void {
+    this.dialog.open(StudentFilterDialogComponent, {
+      width: '600px',
+      data: {
+        type: 'school',
+        schools: this.schools
+      }
+    });
+  }
+  
+  openStudentFilterDialogByYear(): void {
+    this.dialog.open(StudentFilterDialogComponent, {
+      width: '600px',
+      data: {
+        type: 'year',
+        schools: this.schools
+      }
+    });
+  }
+  
+  openStudentFilterDialogByGrade(): void {
+    this.dialog.open(StudentFilterDialogComponent, {
+      width: '600px',
+      data: {
+        type: 'grade',
+        schools: this.schools
+      }
+    });
+  }
 }

@@ -1,1 +1,47 @@
-<p>student-filter-dialog works!</p>
+<h2 mat-dialog-title>Filtrar Estudiantes</h2>
+<div mat-dialog-content>
+
+  <mat-button-toggle-group [(ngModel)]="filterType" aria-label="Tipo de filtro">
+    <mat-button-toggle value="school">Por Colegio</mat-button-toggle>
+    <mat-button-toggle value="year">Por Año</mat-button-toggle>
+    <mat-button-toggle value="grade">Por Grado</mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <ng-container *ngIf="filterType === 'school'">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Selecciona un colegio</mat-label>
+      <mat-select [(ngModel)]="schoolId" (selectionChange)="fetchStudentsBySchool()">
+        <mat-option *ngFor="let school of schools" [value]="school.id">
+          {{ school.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </ng-container>
+
+  <ng-container *ngIf="filterType === 'year'">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Año</mat-label>
+      <input matInput type="number" [(ngModel)]="year" (keydown.enter)="fetchStudentsByYear()" />
+    </mat-form-field>
+  </ng-container>
+
+  <ng-container *ngIf="filterType === 'grade'">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Grado</mat-label>
+      <input matInput type="number" [(ngModel)]="grade" (keydown.enter)="fetchStudentsByGrade()" />
+    </mat-form-field>
+  </ng-container>
+
+  <div *ngIf="students.length > 0">
+    <h3>Resultados:</h3>
+    <mat-list>
+      <mat-list-item *ngFor="let student of students">
+        {{ student.name }}
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="dialogRef.close()">Cerrar</button>
+</div>

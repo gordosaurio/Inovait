@@ -1,0 +1,17 @@
+:host {
+    display: block;
+    padding: 1rem;
+    width: 94%;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  mat-button-toggle-group {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-around;
+  }
+  
