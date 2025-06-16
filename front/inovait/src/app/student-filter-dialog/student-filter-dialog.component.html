@@ -10,7 +10,7 @@
   <ng-container *ngIf="filterType === 'school'">
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Selecciona un colegio</mat-label>
-      <mat-select [(ngModel)]="schoolId" (selectionChange)="fetchStudentsBySchool()">
+      <mat-select [(ngModel)]="schoolId">
         <mat-option *ngFor="let school of schools" [value]="school.id">
           {{ school.name }}
         </mat-option>
@@ -21,16 +21,18 @@
   <ng-container *ngIf="filterType === 'year'">
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Año</mat-label>
-      <input matInput type="number" [(ngModel)]="year" (keydown.enter)="fetchStudentsByYear()" />
+      <input matInput type="number" [(ngModel)]="year" />
     </mat-form-field>
   </ng-container>
 
   <ng-container *ngIf="filterType === 'grade'">
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Grado</mat-label>
-      <input matInput type="number" [(ngModel)]="grade" (keydown.enter)="fetchStudentsByGrade()" />
+      <input matInput type="number" [(ngModel)]="grade" />
     </mat-form-field>
   </ng-container>
+
+  <button mat-button class="btn-verde" (click)="buscar()">Buscar</button>
 
   <div *ngIf="students.length > 0">
     <h3>Resultados:</h3>
@@ -43,5 +45,5 @@
 </div>
 
 <div mat-dialog-actions align="end">
-  <button mat-button (click)="dialogRef.close()">Cerrar</button>
+  <button mat-button class="btn-rojo" (click)="dialogRef.close()">Cerrar</button>
 </div>

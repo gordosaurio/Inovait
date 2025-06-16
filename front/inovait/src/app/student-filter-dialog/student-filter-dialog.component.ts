@@ -68,4 +68,14 @@ export class StudentFilterDialogComponent {
         .subscribe(res => this.students = res);
     }
   }
+
+  buscar() {
+    if (this.filterType === 'school') {
+      this.fetchStudentsBySchool();
+    } else if (this.filterType === 'year') {
+      this.fetchStudentsByYear();
+    } else if (this.filterType === 'grade') {
+      this.fetchStudentsByGrade();
+    }
+  }
 }
