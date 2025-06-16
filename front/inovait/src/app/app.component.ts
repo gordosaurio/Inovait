@@ -11,7 +11,6 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DetailDialogComponent } from '../app/detail-dialog.component';
 import { StudentFormDialogComponent } from '../app/student-form-dialog.component';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -89,6 +88,8 @@ export class AppComponent implements OnInit {
   }
 
   openStudentFormDialog(student?: any): void {
+    console.log('Opening student form dialog');
+    console.log('Lista de escuelas:', this.schools);
     const dialogRef = this.dialog.open(StudentFormDialogComponent, {
       width: '80vw',
       panelClass: 'custom-dialog-container',
