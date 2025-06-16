@@ -34,16 +34,9 @@ def getGroupT(request):
 
 @api_view(['POST'])
 def create_student(request):
-    print("vamos a imprimri el request")
-    print(request.data)
-    print("vamos a imprimir el serializer")
     serializer = StudentSerializer(data=request.data)
-    print(serializer)
-    print(serializer.is_valid())
-    print("vamos a imprimir los errores")
     print(serializer.errors)
     if serializer.is_valid():
-        print("dentro del if")
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
