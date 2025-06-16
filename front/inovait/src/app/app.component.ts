@@ -8,8 +8,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { DetailDialogComponent } from '../app/detail-dialog.component';
-import { StudentFormDialogComponent } from '../app/student-form-dialog.component';
+import { DetailDialogComponent } from './detail-dialog/detail-dialog.component';
+import { StudentFormDialogComponent } from './student-form-dialog/student-form-dialog.component';
 
 @Component({
   selector: 'app-root',

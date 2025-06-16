@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StudentFormDialogComponent } from './student-form-dialog.component';
+import { StudentFormDialogComponent } from '../student-filter-dialog/student-form-dialog.component';
 
 describe('StudentFormDialogComponent', () => {
   let component: StudentFormDialogComponent;

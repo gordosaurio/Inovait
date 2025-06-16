@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { Student, School } from '../app/models/types';
+import { Student, School } from '../models/types';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
