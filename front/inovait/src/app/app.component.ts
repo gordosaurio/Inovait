@@ -90,16 +90,11 @@ export class AppComponent implements OnInit {
 
   openStudentFormDialog(student?: any): void {
     const dialogRef = this.dialog.open(StudentFormDialogComponent, {
-      width: '400px',
+      width: '80vw',
+      panelClass: 'custom-dialog-container',
       data: {
         student: student || null,
         schools: this.schools
-      }
-    });
-  
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        
       }
     });
   }
