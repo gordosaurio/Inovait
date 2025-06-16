@@ -1,6 +1,10 @@
 # inovait/views.py
 from django.http import JsonResponse
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
 from .models import Student, Teacher, School, StudentGroup, GroupT
+from .serializers import SchoolSerializer, TeacherSerializer, TeacherSchoolSerializer, StudentSerializer, GroupSerializer, StudentGroupSerializer, ClassSerializer, ClassStudentSerializer, EnrollmentFeeSerializer 
 
 
 def getStudents(request):
@@ -26,3 +30,20 @@ def getStudentGroups(request):
 def getGroupT(request):
     groupsT = list(GroupT.objects.all().values())
     return JsonResponse(groupsT, safe=False)
+
+
+@api_view(['POST'])
+def create_student(request):
+    print("vamos a imprimri el request")
+    print(request.data)
+    print("vamos a imprimir el serializer")
+    serializer = StudentSerializer(data=request.data)
+    print(serializer)
+    print(serializer.is_valid())
+    print("vamos a imprimir los errores")
+    print(serializer.errors)
+    if serializer.is_valid():
+        print("dentro del if")
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

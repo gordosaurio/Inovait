@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import getStudents, getTeachers, getSchools, getStudentGroups, getGroupT
+from .views import getStudents, getTeachers, getSchools, getStudentGroups, getGroupT, create_student
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +25,5 @@ urlpatterns = [
     path('student/getSchools', getSchools),
     path('student/getStudentGroup', getStudentGroups),
     path('student/getGroupT', getGroupT),
+    path('student/create_student', create_student),
 ]
