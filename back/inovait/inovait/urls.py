@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import getStudents, getTeachers, getSchools, getStudentGroups, getGroupT, create_student, getStudentBySchool, getGroupTByGrade, getGroupByYear, getStudentGroupsByGroupId, getStudentById
+from .views import getStudents, getTeachers, getSchools, getStudentGroups, getGroupT, create_student, getStudentBySchool, getGroupTByGrade, getGroupByYear, getStudentGroupsByGroupId, getStudentById, getStudentsByYear, getStudentsByGrade
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -15,4 +15,6 @@ urlpatterns = [
     path('student/getGroupByYear', getGroupByYear),
     path('student/getStudentGroupsByGroupId', getStudentGroupsByGroupId),
     path('student/getStudentById', getStudentById),
+    path('student/getByYear', getStudentsByYear),
+    path('student/getByGrade', getStudentsByGrade),
 ]

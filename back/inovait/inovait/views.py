@@ -33,6 +33,40 @@ def getStudentBySchool(request):
         return JsonResponse({'error': str(e)}, status=500)
 
 
+def getStudentsByYear(request):
+    year = request.GET.get('year')
+    groups = GroupT.objects.filter(year=year).values_list('id', 'name')
+    student_data = []
+
+    for group_id, group_name in groups:
+        student_ids = StudentGroup.objects.filter(group_id=group_id).values_list('student_id', flat=True)
+        students = Student.objects.filter(id__in=student_ids).values()
+        for student in students:
+            student_data.append({
+                'group_name': group_name,
+                **student
+            })
+
+    return JsonResponse(student_data, safe=False)
+
+
+def getStudentsByGrade(request):
+    grade = request.GET.get('grade')
+    groups = GroupT.objects.filter(grade=grade).values_list('id', 'name')
+    student_data = []
+
+    for group_id, group_name in groups:
+        student_ids = StudentGroup.objects.filter(group_id=group_id).values_list('student_id', flat=True)
+        students = Student.objects.filter(id__in=student_ids).values()
+        for student in students:
+            student_data.append({
+                'group_name': group_name,
+                **student
+            })
+
+    return JsonResponse(student_data, safe=False)
+
+
 @api_view(['POST'])
 def create_student(request):
     serializer = StudentSerializer(data=request.data)
