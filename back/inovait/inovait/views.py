@@ -12,6 +12,18 @@ def getStudents(request):
     return JsonResponse(students, safe=False)
 
 
+def getStudentBySchool(request):
+    school_id = request.GET.get('school_id')
+    if not school_id:
+        return JsonResponse({'error': 'school_id is required'}, status=400)
+
+    try:
+        students = list(Student.objects.filter(school__id=school_id).values())
+        return JsonResponse(students, safe=False)
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
+
+
 def getTeachers(request):
     teachers = list(Teacher.objects.all().values())
     return JsonResponse(teachers, safe=False)
