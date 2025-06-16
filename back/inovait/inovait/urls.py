@@ -15,6 +15,6 @@ urlpatterns = [
     path('student/getGroupByYear', getGroupByYear),
     path('student/getStudentGroupsByGroupId', getStudentGroupsByGroupId),
     path('student/getStudentById', getStudentById),
-    path('student/getByYear', getStudentsByYear),
-    path('student/getByGrade', getStudentsByGrade),
+    path('student/getStudentsByYear', getStudentsByYear),
+    path('student/getStudentsByGrade', getStudentsByGrade),
 ]
